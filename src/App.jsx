@@ -1,11 +1,22 @@
 import './App.css';
-import data from '../src/data.json';
 import React, { useState } from 'react';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
+import { useEffect } from 'react';
 
 function App() {
-  const [toDoList, setToDoList] = useState(data);
+  async function fetchTodos() {
+    const response = await fetch('http://localhost:3000/todos');
+    const todosAsJson = await response.json();
+    setToDoList(todosAsJson);
+  }
+
+  useEffect(() => {
+    fetchTodos();
+    return () => {};
+  }, []);
+
+  const [toDoList, setToDoList] = useState([]);
 
   const handleToggleTaskComplete = (id) => {
     let todoListWithTargetTaskToggled = toDoList.map((task) => {
