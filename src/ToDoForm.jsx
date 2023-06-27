@@ -21,7 +21,9 @@ const ToDoForm = ({ addTask }) => {
         onChange={handleChange}
         placeholder="Add new item..."
       />
-      <button style={{ margin: '20px', background: 'green', color: 'white' }}>
+      <button
+        style={{ margin: '20px', background: 'darkgreen', color: 'white' }}
+      >
         Submit
       </button>
     </form>

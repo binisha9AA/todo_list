@@ -1,8 +1,13 @@
 import React from 'react';
 import ToDo from './ToDo';
-import { BsTrash3 } from 'react-icons/bs';
+import { BsEraser, BsTrash3 } from 'react-icons/bs';
 
-const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
+const ToDoList = ({
+  toDoList,
+  handleToggle,
+  handleFilter,
+  handleDeleteATodo,
+}) => {
   return (
     <div>
       {toDoList.map((todo) => {
@@ -12,6 +17,7 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
               todo={todo}
               handleToggle={handleToggle}
               handleFilter={handleFilter}
+              handleDeleteATodo={handleDeleteATodo}
             />
           </div>
         );
@@ -20,7 +26,7 @@ const ToDoList = ({ toDoList, handleToggle, handleFilter }) => {
         style={{ margin: '20px', background: '#503eaf', color: 'white' }}
         onClick={handleFilter}
       >
-        Delete <BsTrash3 />
+        Clear Finished Tasks <BsEraser />
       </button>
     </div>
   );

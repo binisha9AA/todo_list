@@ -18,6 +18,18 @@ function App() {
     setToDoList(todoListWithTargetTaskToggled);
   };
 
+  const handleDeleteATodo = (id) => {
+    let todoListWithTargetTaskDeleted = toDoList.filter((todo) => {
+      if (Number(id) === todo.id) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    // console.log('Our filtered todos', todoListWithTargetTaskDeleted);
+    setToDoList(todoListWithTargetTaskDeleted);
+  };
+
   const handleClearCompleted = () => {
     let uncompletedTasks = toDoList.filter((task) => {
       return !task.complete;
@@ -42,6 +54,7 @@ function App() {
         toDoList={toDoList}
         handleToggle={handleToggleTaskComplete}
         handleFilter={handleClearCompleted}
+        handleDeleteATodo={handleDeleteATodo}
       />
       <ToDoForm addTask={addTaskToGlobalTodos} />
     </div>
