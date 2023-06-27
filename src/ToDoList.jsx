@@ -1,6 +1,6 @@
 import React from 'react';
 import ToDo from './ToDo';
-import { BsEraser, BsTrash3 } from 'react-icons/bs';
+import { BsEraser } from 'react-icons/bs';
 
 const ToDoList = ({
   toDoList,
