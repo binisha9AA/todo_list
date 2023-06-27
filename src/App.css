@@ -5,7 +5,8 @@ body {
 
 .strike {
   text-decoration: line-through;
-  color: #503eaf;
+  color: darkred;
+  font-weight: 600;
 }
 input {
   height: 40px;
@@ -17,6 +18,7 @@ h1 {
 button {
   font-family: inherit;
   border: none;
+  margin-block: 2px;
 }
 #root {
   max-width: 1280px;

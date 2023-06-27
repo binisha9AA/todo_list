@@ -1,6 +1,6 @@
 import React from 'react';
 import ToDo from './ToDo';
-import { BsEraser } from 'react-icons/bs';
+import { MdOutlineCleaningServices } from 'react-icons/md';
 
 const ToDoList = ({
   toDoList,
@@ -23,10 +23,10 @@ const ToDoList = ({
         );
       })}
       <button
-        style={{ margin: '20px', background: '#503eaf', color: 'white' }}
+        style={{ width: '100%', background: '#503eaf', color: 'white' }}
         onClick={handleFilter}
       >
-        Clear Finished Tasks <BsEraser />
+        Clear Finished Tasks <MdOutlineCleaningServices />
       </button>
     </div>
   );
