@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
 import { useEffect } from 'react';
+import { toggleComplete } from './helpers/todo.helper';
+import { handleDeleteATodoFromDatabase } from './helpers/todo.helper';
+import { addTodosItem } from './helpers/todo.helper';
+import { clearTodosFromDatabase } from './helpers/todo.helper';
 
 function App() {
   async function fetchTodos() {
@@ -21,6 +25,7 @@ function App() {
   const handleToggleTaskComplete = (id) => {
     let todoListWithTargetTaskToggled = toDoList.map((task) => {
       if (Number(id) === task.id) {
+        toggleComplete(id, task.complete);
         return { ...task, complete: !task.complete };
       } else {
         return { ...task };
@@ -32,6 +37,7 @@ function App() {
   const handleDeleteATodo = (id) => {
     let todoListWithTargetTaskDeleted = toDoList.filter((todo) => {
       if (Number(id) === todo.id) {
+        handleDeleteATodoFromDatabase(id);
         return false;
       } else {
         return true;
@@ -41,10 +47,18 @@ function App() {
     setToDoList(todoListWithTargetTaskDeleted);
   };
 
-  const handleClearCompleted = () => {
+  const handleClearCompleted = (id, status) => {
     let uncompletedTasks = toDoList.filter((task) => {
       return !task.complete;
     });
+    let completedTasks = toDoList.filter((task) => {
+      return task.complete;
+    });
+    const completedTaskIds = completedTasks.map((singleCompletedTask) => {
+      return singleCompletedTask.id;
+    });
+    // console.log(completedTaskIds);
+    clearTodosFromDatabase(completedTaskIds);
     setToDoList(uncompletedTasks);
   };
 
@@ -53,6 +67,7 @@ function App() {
       ...toDoList,
       { id: toDoList.length + 1, task: userInput, complete: false },
     ];
+    addTodosItem(Math.random(), userInput, false);
     setToDoList(todoListWithNewItem);
   };
 

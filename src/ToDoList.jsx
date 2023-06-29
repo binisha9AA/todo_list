@@ -8,12 +8,11 @@ const ToDoList = ({
   handleFilter,
   handleDeleteATodo,
 }) => {
-  console.log('Todos', toDoList);
   return (
     <div>
       {toDoList.map((todo) => {
         return (
-          <div key={todo.id}>
+          <div key={Math.random()}>
             <ToDo
               todo={todo}
               handleToggle={handleToggle}

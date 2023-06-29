@@ -1,78 +1,28 @@
 {
   "todos": [
     {
-      "id": 1,
-      "task": "Give dog a bath",
+      "id": 0.45252614466942975,
+      "task": "feed the cat",
       "complete": false
     },
     {
-      "id": 2,
-      "task": "Do laundry",
+      "id": 0.7020040953662534,
+      "task": "go to market",
       "complete": false
     },
     {
-      "id": 3,
-      "task": "Vacuum floor",
+      "id": 0.024991191294488457,
+      "task": "clean the house",
       "complete": false
     },
     {
-      "id": 4,
-      "task": "Feed cat",
+      "id": 0.7357120161175523,
+      "task": "bake cookies",
       "complete": false
     },
     {
-      "id": 5,
-      "task": "Change light bulbs",
-      "complete": false
-    },
-    {
-      "id": 6,
-      "task": "Go to Store",
-      "complete": false
-    },
-    {
-      "id": 7,
-      "task": "Fill gas tank",
-      "complete": false
-    },
-    {
-      "id": 8,
-      "task": "Change linens",
-      "complete": false
-    },
-    {
-      "id": 9,
-      "task": "Rake leaves",
-      "complete": false
-    },
-    {
-      "id": 10,
-      "task": "Bake Cookies",
-      "complete": false
-    },
-    {
-      "id": 11,
-      "task": "Take nap",
-      "complete": false
-    },
-    {
-      "id": 12,
-      "task": "Read book",
-      "complete": false
-    },
-    {
-      "id": 13,
-      "task": "Exercise",
-      "complete": false
-    },
-    {
-      "id": 14,
-      "task": "Give dog a bath",
-      "complete": false
-    },
-    {
-      "id": 15,
-      "task": "Do laundry",
+      "id": 0.5437856989204772,
+      "task": "take a nap",
       "complete": false
     }
   ]
